@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BT">
+
+<head>
+    <title>Conhecendo o DOM!</title>
+</head>
+
+<body>
+    <h1 class="titulo">Conhecendo o DOM!</h1>
+    <form>
+        <label for="nome">Nome:</label>
+        <input onmousemove="this.focus();" onmouseout="this.blur();" type="text" id="nome" name="nome" />
+        <label onmouseover="this.click();">
+            <input type="radio" name="sexo" value="F">
+            Feminino
+        </label>
+        <label onmouseover="this.click();">
+            <input type="radio" name="sexo" value="M">
+            Masculino
+        </label>
+        <button type="submit" ondblclick="
+                    alert('clicou no botão');
+        ">Enviar</button>
+        <button type="reset" id="btn-reset">Resetar</button>
+
+        <div id="minha-div" style="width: 300px;height: 200px; background-color: red;">
+        </div>
+    </form>
+</body>
+<script>
+    var minhaDiv = document.querySelector('#minha-div');
+    minhaDiv.onmousedown = function (evento) {
+        minhaDiv.style.backgroundColor = 'blue';
+    };
+
+    minhaDiv.onmouseup = function () {
+        minhaDiv.style.backgroundColor = 'red';
+    };
+
+    var btnReset = document.querySelector('#btn-reset');
+
+    btnReset.onclick = function () {
+        var retorno = confirm('tem certeza que deseja resetar?');
+        if (!retorno) {
+            return false;
+        }
+    };
+
+    console.log(
+        'getElementById: ', document.getElementById('nome'));
+
+    console.log(
+        'getElementsByName: ', document.getElementsByName('sexo'));
+
+    console.log(
+        'getElementsByName 1: ', document.getElementsByName('sexo')[0]);
+
+    console.log(
+        'getElementsByTagName: ',
+        document.getElementsByTagName('input'));
+
+    console.log(
+        'getElementsByTagName 2: ',
+        document.getElementsByTagName('input')[1]);
+
+    console.log(
+        'getElementsByClassName: ',
+        document.getElementsByClassName('titulo'));
+
+    console.log(
+        'getElementsByClassName 1: ',
+        document.getElementsByClassName('titulo')[0]);
+
+    console.log(
+        'querySelector: ', document.querySelector('button'));
+
+    console.log(
+        'querySelectorAll 1: ', document.querySelectorAll('form')[0]);
+</script>
+
+</html>
