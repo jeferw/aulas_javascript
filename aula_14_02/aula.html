@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Olá, mundo com JavaScript</h1>
+
+    <script>
+        //alert('Olá, mundo!');
+        //console.log( confirm('Vc deseja continuar?'));  
+        //console.log(   prompt("Qual é seu nome?"));
+
+        //este é um comentário de uma linha 
+
+        /*
+        este é um comentário de várias linhas
+        */
+
+        //escopo de bloco var
+        /* if (true) {
+             var nome = 'Jeferson';
+         }
+         console.log(nome);*/
+
+        //escopo de bloco let
+        //a variavel let é sizivel 
+        //apenas no escopo do if
+        /* if (true) {
+             let idade = 20;
+             console.log(idade);
+         }
+         console.log(idade);*/
+        /*
+                const MEU_NOME = 'jeferson'
+                if (true) {
+                    console.log(MEU_NOME);
+                }
+                console.log(MEU_NOME);*/
+
+        /*   var minhaVariavel = 10;
+           console.log(minhaVariavel);
+           minhaVariavel = 'olá';
+           console.log(minhaVariavel);*/
+
+        //concatenar variaveis
+        //var meuNome = 'Jeferson';
+        //var minhaIdade = 18;
+        //alert('Olá, ' + meuNome + '!');
+        //template string, usamos a crase `
+        //alert(`Olá, ${meuNome}, ${minhaIdade}`);
+
+
+        //incremento
+        /*var a = 5;
+        console.log(a);
+        var x = a++;
+        console.log(x);
+        var y = ++a;
+        console.log(y);*/
+
+        // comparações com ===, além de comparar o valor 
+        //das variaveis, também compara o tipo
+        // 1 === 1 //true
+        // 1 === '1' //false
+
+        //comparações com ==, apenas compara o valor
+        // 1 == 1 //true
+        // 1 == '1' //true
+        /* if (11 === '11') {
+             console.log('entrou no if 1º');
+         }
+         if (11 == '11') {
+             console.log('entrou no if 2º');
+         }*/
+
+        //operador ternario
+        //var valor = (12 > 15) ? 'verdadeiro' : 'false';
+        //console.log(valor);
+
+        //instanceof
+        //var instancia = Number(3);
+        //console.log('Instancia de Number?: ' + instancia instanceof Number);
+        // console.log('Instancia de String?: ' + instancia instanceof String);
+
+        //typeof verifica o tipo da variavel
+        /*var minhaString = 'jeferson';
+        console.log(typeof minhaString);
+
+        var meuNumero = 2;
+        console.log(typeof meuNumero);
+
+        minhaString = 4;
+        console.log(typeof minhaString);*/
+        /*
+                var tipo = 'java';
+                switch (tipo) {
+                    case 'java':
+                        break;
+                    case 'javascript':
+                        alert('Linguagem de programação');
+                        break;
+                    case 'html':
+                        alert('Linguagem de marcação');
+                        break;
+                }*/
+
+        /*function fnDigaMeuNome(nome) {
+            alert(`Olá, ${nome}`);
+            return nome + ' weiss';
+        }
+
+        let nome = fnDigaMeuNome('jeferson');
+
+        console.log(nome);   */
+    </script>
+</body>
+
+</html>
