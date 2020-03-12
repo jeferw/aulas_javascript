@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos Teclado</title>
+</head>
+
+<body>
+    <div>
+        <input placeholder="onkeypress" id="input-keypress"><br><br>
+        <input placeholder="onkeydown" onkeydown="
+        /*
+            Nesse escopo temos disponivel duas propriedades do eveto;
+            event -> evento em sí, podemos selecionar atributos desse evento; 
+            this -> elemento de onde o evento partiu;
+        */
+        console.log('keyCode - ', event.keyCode);
+        console.log('Evento - ', event);
+        console.log('Elemento - ', this);
+        "><br><br>
+
+
+
+        <textarea rows="6" cols="50" placeholder="onkeyup" class="textarea-keyup"></textarea><br><br>
+    </div>
+    <script>
+        var inputKeypress = document.getElementById('input-keypress');
+        inputKeypress.onkeypress = function (evento) {
+            console.log(evento.keyCode);
+        };
+
+        var textAreaKeyUp = document.querySelector('.textarea-keyup');
+        textAreaKeyUp.onkeyup = function (evento) {
+            console.log(evento.keyCode);
+        }
+    </script>
+</body>
+
+</html>

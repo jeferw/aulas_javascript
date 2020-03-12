@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>EventListener</title>
+</head>
+
+<body>
+    <button id="btn">Click</button>
+    <button id="btn-remover-evento">Remover Evento</button>
+</body>
+<script>
+    // selecionou o botão
+    var btn = document.querySelector('#btn');
+
+    //selecinar o elemento
+    document.querySelector('#btn-remover-evento')
+        //atriburir evento de clique
+        .addEventListener('click', function (evento) {
+            // removemos o evento de clique do botão (id = btn)
+            btn.removeEventListener('click', digaOla);
+        });
+
+    // criou uma função
+    function digaOla(
+        evento/*O addEventListener sempre nos envia o evento*/) {
+
+        console.log(evento);
+
+        alert('Olá, bem vindo!');
+    }
+    // adicionou uma escuta para o evento de clique
+    // no botão selecionado
+    btn.addEventListener(
+        'click' /*tipo do evento*/,
+        digaOla /*funcção que será executada*/)
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos Window/Objeto</title>
+</head>
+
+<body onload="init();" onresize="
+// invocamos a função redimensionou 
+// passando como paramento para ela o this, que neste caso é o body
+redimensionou(this);
+
+">
+    <div style="height: 300px;overflow: scroll;" onscroll="
+    
+    console.log(event.srcElement.scrollTop);
+    
+    ">
+        <div style="height: 500px;background-color: aqua;"></div>
+    </div>
+
+    <script>
+        function init() {
+            console.log('Página Cerregada!');
+            alert('Olá, Bem vindo!');
+        }
+
+        function redimensionou(corpoHtml) {
+            // buscamos qual é o Width da nossa página;
+            console.log(corpoHtml.innerWidth);
+        }
+    </script>
+</body>
+
+</html>

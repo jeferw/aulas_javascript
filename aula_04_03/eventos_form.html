@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos Formulário</title>
+</head>
+
+<body>
+    <form id="form-principal">
+        <input placeholder="onblur" onblur="
+        
+        // pegando o valor informado no campo
+        if(this.value !== 'Jeferson'){
+            alert('Informe o nome Jeferson');
+        }
+        
+        "><br><br>
+        <input placeholder="onchange" onchange="
+        
+        console.log(this.value);
+        
+        "><br><br>
+
+        <input placeholder="onfocus" onfocus="
+        
+        this.style.border = '3px solid red';
+
+        " onblur="
+        
+        this.style.border = '1px solid gray';
+
+        "><br><br>
+
+
+        <input placeholder="onselect" onselect="
+        
+        console.log(event);
+        
+        "><br><br>
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Resetar">
+    </form>
+
+
+    <script>
+        var form = document.querySelector('#form-principal');
+        form.onreset = function (evento) {
+
+            var opcao = confirm('Tem certesa que deseja resetar?');
+            if (!opcao /*opcao === false*/) {
+                // impedir de limpar os campos
+                return false;
+            }
+        }
+
+        form.onsubmit = function () {
+            var opcao = confirm(
+                'Tem certeza que deseja enviar os dados?');
+
+            if (!opcao/*opcao === false*/) {
+                // bloqueia o evento, impedindo de enviar os dados
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
