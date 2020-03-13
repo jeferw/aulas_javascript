@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05</title>
+    <style>
+        #minhaDiv {
+            width: 300px;
+            height: 300px;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="minhaDiv"></div>
+    <br>
+    <button id="addEvento">Adicionar evento</button>
+    <button id="removerEvento">Remover Evento</button>
+    <script>
+
+        //função nomeada
+        function dblClickDiv(evento) {
+            var div = evento.target;
+            div.textContent = Math.random();
+        }
+
+        var minhaDiv = document.querySelector('#minhaDiv');
+
+        document.querySelector('#addEvento').
+            addEventListener('click',
+                function () {
+                    minhaDiv.addEventListener('dblclick', dblClickDiv);
+                }
+            );
+
+        document.querySelector('#removerEvento').
+            addEventListener('click',
+                function () {
+                    minhaDiv.removeEventListener('dblclick', dblClickDiv);
+                }
+            );
+    </script>
+</body>
+
+</html>

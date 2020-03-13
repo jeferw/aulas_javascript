@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+</head>
+
+<body>
+    <div>
+        <label>Informe seu nome:</label>
+        <input type="text" id="iptNome">
+    </div>
+    <br>
+    <button id="btnExibirNome">Exibir Nome</button>
+    <script>
+        //selecionar o elemento botão
+        document.querySelector('#btnExibirNome').
+            //adicionando o evento de clique
+            addEventListener('click',
+                //função que será executada ao clicar no botão
+                function () {
+                    //selecionamos o elemento input "nome"
+                    var inputNome = document.querySelector('#iptNome');
+                    //pegamos o valor que está no input
+                    var nome = inputNome.value;
+
+                    if (nome) {
+                        // se o nome estiver preenchido
+                        // exibe o alert
+                        alert(`O nome completo é: ${nome}`);
+                    } else {
+                        // se o campo não estiver preenchido
+                        // solicite para que o nome seja
+                        // informado
+                        alert('Informe seu nome!');
+
+                        // aguardar 50 milissegundos
+                        // para setar o foco no campo
+                        setTimeout(function () {
+                            inputNome.focus();
+                        }, 50);
+                    }
+                }
+            );
+    </script>
+</body>
+
+</html>
