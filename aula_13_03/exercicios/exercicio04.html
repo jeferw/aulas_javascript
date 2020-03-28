@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+    <style>
+        img {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="imagem" src="https://pt.seaicons.com/wp-content/uploads/2016/06/bulb-icon.png">
+
+    <script>
+        let imagem = document.querySelector('#imagem');
+
+        function ligarLanpada() {
+            imagem.src = 'https://icons.iconarchive.com/icons/artbees/lights/512/OnLamp-icon.png';
+        }
+
+        function apagarLampada() {
+            imagem.src = 'https://pt.seaicons.com/wp-content/uploads/2016/06/bulb-icon.png';
+        }
+
+        imagem.addEventListener('mouseover', ligarLanpada);
+
+        imagem.addEventListener('mouseout', apagarLampada);
+    </script>
+</body>
+
+</html>

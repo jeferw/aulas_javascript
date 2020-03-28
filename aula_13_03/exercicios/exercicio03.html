@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+</head>
+
+<body>
+    <h3>Lista de Itens</h3>
+    <ul>
+
+    </ul>
+    <button id="btnAdicionar">Adicione um Item</button>
+    <script>
+
+        let contador = 1;
+
+        function adicionarLi(event) {
+            let ul = document.querySelector('ul');
+
+            let novoLi = document.createElement('li');
+            novoLi.addEventListener('click', function (e) {
+                let li = e.target;
+                let ul = li.parentNode;
+                ul.removeChild(li);
+            });
+            novoLi.textContent = `Item ${contador++}`;
+
+            ul.appendChild(novoLi);
+        }
+
+        document.querySelector('#btnAdicionar').addEventListener('click', adicionarLi);
+    </script>
+</body>
+
+</html>

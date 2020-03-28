@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05</title>
+    <style>
+        img {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="imagem" src="https://pt.seaicons.com/wp-content/uploads/2016/06/bulb-icon.png"><br><br>
+    <button id="btnLigaDesliga">Ligar/Desligar</button>
+    <script>
+        let imagem = document.querySelector('#imagem');
+
+        var lampadaLigada = false;
+
+        function ligarDesligarLanpada() {
+            if (lampadaLigada) {
+                imagem.src = 'https://pt.seaicons.com/wp-content/uploads/2016/06/bulb-icon.png';
+                //lampadaLigada = false;
+            } else {
+                imagem.src = 'https://icons.iconarchive.com/icons/artbees/lights/512/OnLamp-icon.png';
+                //lampadaLigada = true;
+            }
+
+            lampadaLigada = !lampadaLigada;
+        }
+
+        document.querySelector('#btnLigaDesliga').addEventListener('click', ligarDesligarLanpada)
+    </script>
+</body>
+
+</html>
