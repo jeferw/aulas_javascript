@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01 e 02</title>
+</head>
+
+<body>
+    <div>
+        <button id="btnFor">Laço for</button>
+        <button id="btnForIn">Laço for in</button>
+        <button id="btnWhile">Laço while</button>
+        <button id="btnDoWhile">Laço do while</button>
+    </div>
+    <div id="conteudo">
+
+    </div>
+    <script>
+        let divConteudo = document.querySelector('#conteudo');
+
+        document.querySelector('#btnFor').addEventListener('click', function () {
+            let html = '';
+
+            for (let i = 1; i <= 6; i++) {
+                html += `<h${i}>For - Nível ${i}</h${i}>`;
+            }
+
+            divConteudo.innerHTML = html;
+        });
+
+        document.querySelector('#btnForIn').addEventListener('click', function () {
+            let html = '';
+            let niveis = [1, 2, 3, 4, 5, 6];
+
+            for (const index in niveis) {
+                html += `<h${niveis[index]}>For in - Nível ${niveis[index]}</h${niveis[index]}>`;
+            }
+
+            divConteudo.innerHTML = html;
+        });
+
+        document.querySelector('#btnWhile').addEventListener('click', function () {
+            let html = '';
+
+            let i = 1;
+            while (i <= 6) {
+                html += `<h${i}>While - Nível ${i}</h${i}>`;
+                i++;
+            }
+
+            divConteudo.innerHTML = html;
+        });
+
+        document.querySelector('#btnDoWhile').addEventListener('click', function () {
+            let html = '';
+
+            let i = 1;
+
+            do {
+                html += `<h${i}>Do While - Nível ${i}</h${i}>`;
+                i++;
+            } while (i <= 6);
+
+            divConteudo.innerHTML = html;
+        });
+    </script>
+</body>
+
+</html>

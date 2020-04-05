@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+    <style>
+        .linhaSelecionada {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Sexo</th>
+                <th>Idade</th>
+                <th>Endereço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Carlos</td>
+                <td>56289478452</td>
+                <td>Maculino</td>
+                <td>22</td>
+                <td>Centro</td>
+            </tr>
+            <tr>
+                <td>Maria</td>
+                <td>56458463474</td>
+                <td>Feminino</td>
+                <td>36</td>
+                <td>Centro</td>
+            </tr>
+            <tr>
+                <td>Maria</td>
+                <td>56458463474</td>
+                <td>Feminino</td>
+                <td>36</td>
+                <td>Centro</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        let linhas = document.querySelectorAll('tbody tr');
+
+        function pintaLinha(evento) {
+            for (let i = 0; i < linhas.length; i++) {
+                linhas[i].className = '';
+            }
+
+            this.className = 'linhaSelecionada';
+        }
+
+        for (let i = 0; i < linhas.length; i++) {
+            linhas[i].addEventListener('click', pintaLinha);
+        }
+    </script>
+</body>
+
+</html>
