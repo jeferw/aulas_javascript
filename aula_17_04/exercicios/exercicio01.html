@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+    <style>
+        * {
+            font-family: Consolas;
+        }
+
+        #abas {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        #btns>button {
+            border: 1px solid black;
+            padding: 8px 13px;
+            cursor: pointer;
+            width: 22.2%;
+            display: inline-block;
+            margin: 0;
+        }
+
+        .dvAba {
+            border: 1px solid black;
+            display: none;
+        }
+
+        .visivel {
+            display: block;
+        }
+    </style>
+</head>
+
+<body onload="inicia();">
+    <div id="abas">
+        <div id="btns">
+            <button id="aba1">Aba 01</button>
+            <button id="aba2">Aba 02</button>
+            <button id="aba3">Aba 03</button>
+            <button id="aba4">Aba 04</button>
+        </div>
+        <div id="content">
+            <div id="dv-aba1" class="dvAba visivel">
+                Aba 01
+            </div>
+            <div id="dv-aba2" class="dvAba">
+                Aba 02
+            </div>
+            <div id="dv-aba3" class="dvAba">
+                Aba 03
+            </div>
+            <div id="dv-aba4" class="dvAba">
+                Aba 04
+            </div>
+        </div>
+    </div>
+    <script>
+        function inicia() {
+            var btnAbas = document.querySelectorAll('#btns > button');
+            var i, qtde;
+            for (i = 0, qtde = btnAbas.length; i < qtde; i++) {
+                btnAbas[i].addEventListener('click', mostra);
+            }
+        }
+
+        function mostra(evento) {
+            document.querySelector('.visivel').classList.remove('visivel');
+            document.querySelector('#dv-' + evento.target.id).classList.add('visivel');
+        }
+    </script>
+</body>
+
+</html>
