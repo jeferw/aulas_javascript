@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Requisição HTTP</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form id="form">
+            <label for="curso">Nome do Curso:</label><br>
+            <input id="curso" name="curso" type="text" maxlength="60"  ><br><br>
+
+            <label for="turno">Turno:</label><br>
+            <select id="turno" name="turno">
+                <option value="">Selecione</option>
+                <option value="M">Manhã</option>
+                <option value="T">Tarde</option>
+                <option value="N">Noite</option>
+            </select><br><br>
+
+            <label for="qtdeEstudantes">Quantidade de Estudantes:</label><br>
+            <input id="qtdeEstudantes" name="qtdeEstudantes" type="number" ><br><br>
+
+            <label for="data">Data de Cadastro:</label><br>
+            <input id="data" name="data" type="date" ><br><br>
+
+            <input type="submit" value="Salvar Curso">
+        </form>
+        <script>
+
+            document.querySelector('#form').addEventListener('submit', function (e) {
+                //impede o formulário de dar submit e recarregar a página
+                e.preventDefault();
+
+                // Recupere as informações do formulário
+
+                // Chame a função que irá realizar a requisição para o servidor
+                // Passe os parametros para ela
+            });
+
+            // Crie a função genérica que irá realizar a requisição
+            // Como tanto o JS quanto o servidor estão rodando no mesmo dominio (localhost)
+            // a URL da será a mesmo que adicionávamos ao action do formulário 
+            // /{Caminho de Contexto}/{Caminho do servlet}
+
+        </script>
+    </body>
+</html>
